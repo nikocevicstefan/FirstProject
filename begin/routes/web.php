@@ -24,3 +24,12 @@ Route::get('/tasks/completed/{task}', 'TaskController@complete');
 
 Route::patch('/tasks/destroy','TaskController@destroy');
 
+Route::get('/about', function(){
+    return view ('about');
+});
+
+Route::get('/contact', function(){
+    return view ('contact');
+});
+
+

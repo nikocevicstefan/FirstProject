@@ -10,18 +10,22 @@
 
                 {{csrf_field()}}
 
-                <table>
+                <table >
 
                     <tr>
-                        <td><strong>Add to-do items:</strong></td>
+                        <td><h2 style="width: 960px">Add todo items</h2></td>
                     </tr>
 
                     <tr>
-                        <td colspan="2">
-                            <input type="text" class="form-control" style="margin-bottom: 1%" name="body" placeholder="todo item">
+                        <td>
+                            <input type="text" class="form-control" name="body" placeholder="todo item" >
                         </td>
                         <td>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-default"
+                                    style="margin-bottom: 0.3%;
+                                     margin-left: 100%;
+                                     border:solid 1px #007bff;
+                                     color: #007bff;">Add</button>
                         </td>
                     </tr>
 
@@ -30,7 +34,7 @@
             </form>
         </div>
 
-        <div class="form-group form-control">
+        <div class="form-group form-control" >
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link" href="/tasks/">All</a>
@@ -49,7 +53,7 @@
                 {{csrf_field()}}
                 {{method_field('PATCH')}}
             @include('layouts.selected')
-                <button type="submit" class="btn btn-danger">Remove all!</button>
+                <button type="submit" class="btn btn-danger">Remove all</button>
             </form>
 
         </div>

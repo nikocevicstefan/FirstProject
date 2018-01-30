@@ -1,4 +1,4 @@
-<div class="form-group form-control">
+<div class="form-group form-control" >
 <table class="table table-striped">
     <tbody>
 
@@ -25,7 +25,7 @@
                     @endif
                 @endif
             </td>
-            
+
             <td style="width:51px;">
                 @if($task->completed == 0)
                     <a href="/tasks/completed/{{$task->id}}"><img src="/svg/checked.svg" width="20" height="20" ></a>
