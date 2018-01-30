@@ -75,20 +75,16 @@ class TaskController extends Controller
         return redirect('/tasks');
     }
 
-    public function destroy(Request $request)
-    {
-        $this->validate($request, [
-            'checked' => 'required',
-        ]);
-
-        $checked = $request->input('checked');
-
-        Task::destroy($checked);
-    }
-
-    public function update(Task $task)
+    public function favorite(Task $task)
     {
         $task->update(['favorite' => 1]);
+        $task->save();
+        return redirect('tasks');
+    }
+
+    public function unfavorite(Task $task)
+    {
+        $task->update(['favorite' => 0]);
         $task->save();
         return redirect('tasks');
     }
@@ -98,5 +94,17 @@ class TaskController extends Controller
         $task->update(['completed' => 1]);
         $task->save();
         return redirect('tasks');
+    }
+
+    public function destroy(Request $request)
+    {
+        $this->validate($request, [
+            'checked' => 'required',
+        ]);
+
+        $checked = $request->input('checked');
+
+        Task::destroy($checked);
+        return back();
     }
 }

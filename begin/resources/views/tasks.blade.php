@@ -45,14 +45,13 @@
                     <a class="nav-link" href="/tasks/favorite">Favorite</a>
                 </li>
             </ul>
+            <form method="POST" action="{{ Url('/tasks/destroy') }}">
+                {{csrf_field()}}
+                {{method_field('PATCH')}}
             @include('layouts.selected')
+                <button type="submit" class="btn btn-danger">Remove all!</button>
 
-            <form method="POST" action="{{url('/tasks')}}">
-                {{ csrf_field() }}
-                {{ method_field('DELETE') }}
-                <button class="btn btn-danger" type="submit">Remove all</button>
             </form>
-
 
         </div>
     </div>
