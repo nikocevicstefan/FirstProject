@@ -1,4 +1,4 @@
-<div class="form-group form-control" >
+<div class="form-group form-control" style="padding: 0">
 <table class="table table-striped">
     <tbody>
 

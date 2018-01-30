@@ -13,7 +13,7 @@
                 <table >
 
                     <tr>
-                        <td><h2 style="width: 960px">Add todo items</h2></td>
+                        <td><h2 style="width: 965px">Add todo items</h2></td>
                     </tr>
 
                     <tr>
@@ -53,7 +53,7 @@
                 {{csrf_field()}}
                 {{method_field('PATCH')}}
             @include('layouts.selected')
-                <button type="submit" class="btn btn-danger">Remove all</button>
+                <button type="submit" class="btn btn-danger" style="margin-bottom: 10px">Remove all</button>
             </form>
 
         </div>
