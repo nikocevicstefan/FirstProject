@@ -14,14 +14,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // novi task, brise task, brise sve taskove respektivno
 Route::post('tasks','TaskController@store');
-Route::delete('tasks/{task}', 'TaskController@delete');
+Route::get('tasks/delete/{task}', 'TaskController@delete');
 
 
 //daje im favorite i complete properties respektivno
-Route::patch('/tasks/favorite/{task}', 'TaskController@favorite');
-Route::patch('/tasks/unfavorite/{task}', 'TaskController@unfavorite');
-
-Route::patch('/tasks/completed/{task}', 'TaskController@complete');
+Route::get('/tasks/favorite/{task}', 'TaskController@favorite');
+Route::get('/tasks/unfavorite/{task}', 'TaskController@unfavorite');
+Route::get('/tasks/completed/{task}', 'TaskController@complete');
 
 Route::patch('/tasks/destroy','TaskController@destroy');
 

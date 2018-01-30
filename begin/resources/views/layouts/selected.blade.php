@@ -19,38 +19,21 @@
             <td style="width:51px;">
                 @if($task->completed == 0)
                     @if($task->favorite == 0)
-                        <form action="{{url('tasks')."/favorite/".$task->id }}" method="post">
-                            <input type="image" src="/svg/yellowstar-empty.svg" alt="Submit" width="20" height="20">
-                            {{ method_field('PATCH') }}
-                            {{csrf_field()}}
-                        </form>
+                        <a href="/tasks/favorite/{{$task->id}}" ><img src="/svg/yellowstar-empty.svg" width="20" height="20" ></a>
                     @else
-                        <form action="{{url('tasks')."/unfavorite/".$task->id }}" method="post">
-                            <input type="image" src="/svg/yellowstar.svg" alt="Submit" width="20" height="20">
-                            {{ method_field('PATCH') }}
-                            {{csrf_field()}}
-                        </form>
+                        <a href="/tasks/unfavorite/{{$task->id}}"><img src="/svg/yellowstar.svg" width="20" height="20" ></a>
                     @endif
                 @endif
-
             </td>
-
+            
             <td style="width:51px;">
                 @if($task->completed == 0)
-                <form action="{{url('tasks')."/completed/".$task->id }}" method="post">
-                    <input type="image" src="/svg/checked.svg" alt="Submit" width="20" height="20">
-                    {{method_field('PATCH')}}
-                    {{csrf_field()}}
-                </form>
+                    <a href="/tasks/completed/{{$task->id}}"><img src="/svg/checked.svg" width="20" height="20" ></a>
                 @endif
             </td>
 
             <td style="width:51px;">
-                <form action="{{url('tasks')."/".$task->id }}" method="post">
-                    <input type="image" src="/svg/error.svg" alt="Submit" width="20" height="20">
-                    {{method_field('DELETE')}}
-                    {{csrf_field()}}
-                </form>
+                <a href="/tasks/delete/{{$task->id}}"><img src="/svg/error.svg" width="20" height="20" ></a>
             </td>
 
         </div>

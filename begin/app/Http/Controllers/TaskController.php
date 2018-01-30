@@ -25,7 +25,7 @@ class TaskController extends Controller
     {
         //    $tasks = DB::table('tasks')->where('id',$id)->get();
         //    $tasks = Task::all()->where('id',$id);
-        return view('layouts.selected', compact('task'));
+        return view('layouts.tasks', compact('task'));
     }
 
     //gotovi taskovi
@@ -72,28 +72,28 @@ class TaskController extends Controller
         }
 
         $task->delete();
-        return redirect('/tasks');
+        return back();
     }
 
     public function favorite(Task $task)
     {
         $task->update(['favorite' => 1]);
         $task->save();
-        return redirect('tasks');
+        return back();
     }
 
     public function unfavorite(Task $task)
     {
         $task->update(['favorite' => 0]);
         $task->save();
-        return redirect('tasks');
+        return back();
     }
 
     public function complete(Task $task)
     {
-        $task->update(['completed' => 1]);
+        $task->update(['completed' => 1, 'favorite' => 0]);
         $task->save();
-        return redirect('tasks');
+        return back();
     }
 
     public function destroy(Request $request)
